@@ -52,3 +52,62 @@ class Multilinguist
     json_response['translationText']
   end
 end
+
+
+# ********** MATH GENIUS BELOW **********
+# class MathGenius < Multilinguist
+#
+#   def report_total(array_numbers)
+#     puts "#{say_in_local_language("The total is ")} #{array_numbers.sum}"
+#   end
+#
+# end
+#
+# kaiser = MathGenius.new
+#
+# puts kaiser.report_total([12, 24, 36])
+#
+# kaiser.travel_to("Germany")
+# puts kaiser.report_total([12, 24, 36])
+
+# kaiser.travel_to("Japan")
+# puts kaiser.report_total([12, 24, 36])
+
+# kaiser.travel_to("France")
+# puts kaiser.report_total([12, 24, 36])
+
+
+
+# ********** QUOTE COLLECTOR BELOW **********
+# class QuoteCollector < Multilinguist
+#
+#   @@quote = []
+#
+#   def add_quote(quote)
+#     @@quote << quote
+#   end
+#
+#   def quote
+#     @@quote
+#   end
+#
+#   def share_quote
+#     random_quote = quote.sample
+#     say_in_local_language(random_quote)
+#   end
+#
+# end
+#
+# kaiser = QuoteCollector.new
+#
+# kaiser.add_quote("Do what you love. Love what you do")
+# kaiser.add_quote("Sometimes you win. Sometimes you learn")
+# kaiser.add_quote("If not now, then when?")
+# puts kaiser.quote
+#
+# kaiser.travel_to("Germany")
+# puts kaiser.share_quote
+
+
+
+# ********** OUR SOLAR SYSTEM BELOW **********
