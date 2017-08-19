@@ -107,7 +107,3 @@ end
 #
 # kaiser.travel_to("Germany")
 # puts kaiser.share_quote
-
-
-
-# ********** OUR SOLAR SYSTEM BELOW **********
