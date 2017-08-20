@@ -1,122 +1,59 @@
+# First we'll need a class to represent the solar system. Let's call it System,
+# and give it an attribute bodies. bodies will start as an empty array (ie. []).
+
+
+ # Let's make bodies read-only, and give System an instance method called add
+ # which will add a celestial body to the list. We'll also need an instance
+ # method called total_mass which should add up the mass of all the bodies in
+ # bodies, and return it.
+
+require_relative 'planets'
+require_relative 'stars'
+require_relative 'moon'
+
+
 class System
 
   @@bodies = []
+  @@total_mass = []
 
   def initialize
-    @bodies
+   @@bodies = []
+   @@total_mass = []
   end
 
   def bodies
-    @bodies
+    @@bodies
   end
 
-  def add(name, mass)
-    @bodies << names
-    @total_mass << mass
+  def add_body(new_body)
+    @@bodies << new_body
   end
+
+  # def add_mass(new_mass)
+    # @@total_mass << new_mass
+  # end
 
   def total_mass
-    @total_mass.sum
-  end
-
-  def system
-    @@planets + @@stars
-  end
-end
-
-
-
-
-
-class Planet < Body
-
-  @@planets = []
-
-  def self.create(planet_name, planet_mass, planet_rotate_day, planet_orbit_year)
-    planet = Planet.new(planet_name, planet_mass, planet_rotate_day, planet_orbit_year)
-    @@planets << planet
-    @@planets
-  end
-
-  def initialize(planet_name, planet_mass, planet_rotate_day, planet_orbit_year)
-    @planet_name = planet_name
-    @planet_mass = planet_mass
-    @planet_rotate_day = planet_rotate_day
-    @planet_orbit_year = planet_orbit_year
-  end
-
-  def planets
-    @@planets
-  end
-
-  def planet_name
-     @planet_name
-  end
-
-  def planet_mass
-    @planet_mass
-  end
-
-  def planet_rotate_day
-    @planet_rotate_day
-  end
-
-  def planet_orbit_year
-    @planet_orbit_year
+    @@total_mass.sum
   end
 
 end
 
 
-class Star < Body
+m78_system = System.new
 
-  @@stars = []
+pk266 = Planet.new("PK-266", 250_000, 500, 3)
+m78_system.add_body(pk266)
+# m78_system.add_mass(250_000)
 
-  def self.create(star_name, star_mass, star_type)
-    star = Star.new(star_name, star_mass, star_type)
-    @@stars << star
-    @@stars
-  end
+sl298 = Star.new("SL-298", 50_000_000, "Death Star")
+m78_system.add_body(sl298)
+# m78_system.add_mass(50_000_000)
 
-  def initialize(star_name, star_mass, star_type)
-    @star_name = star_name
-    @star_mass = star_mass
-    @star_type = star_type
-  end
+mt337 = Moon.new("MT-337", 10_000, 180, "Rom-PI-946 ")
+m78_system.add_body(mt337)
+# m78_system.add_mass(10_000)
 
-  def stars
-    @@stars
-  end
-
-  def star_name
-    @star_name
-  end
-
-  def star_mass
-    @star_mass
-  end
-
-  def star_type
-    @star_type
-  end
-
-end
-
-
-class Moon < Body
-
-end
-
-# solar_system = System.new
-# solar_system.add("Mars", 2000)
-# solar_system.add("MI-298", 250_000)
-
-# puts solar_system.inspect
-# puts solar_system.bodies
-# puts solar_system.total_mass
-
-mars = Planet.create("Mars", 250_000, 60, 800)
-puts mars.inspect
-
-sun = Star.create("Sun", 1_000_000, "G-Type")
-puts sun.inspect
+puts m78_system.bodies.inspect
+puts m78_system.total_mass
